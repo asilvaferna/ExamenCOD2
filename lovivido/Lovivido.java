@@ -19,16 +19,28 @@ public class Lovivido{
 
         años = Integer.parseInt(edad);
 
-        mes = (años * 12);
-        dia = (años * 365);
-        hora = (dia * 24);
+        calculaMes(años);
+        calculaDia(años);
+        calculaHora(calculaDia(años));
 
-        JOptionPane.showMessageDialog(null, "Meses: " + mes, "Numero de meses vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Meses: " + calculaMes(años), "Numero de meses vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
 
-        JOptionPane.showMessageDialog(null, "Días: " + dia, "Numero de días vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Días: " + calculaDia(años), "Numero de días vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
 
-        JOptionPane.showMessageDialog(null, "Horas: " + hora, "Numero de horas vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Horas: " + calculaHora(calculaDia(años)), "Numero de horas vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
 
         System.exit(0);
+    }
+    public static int calculaMes(int nAños){
+        int nMes = nAños * 12;
+        return nMes;
+    }
+    public static int calculaDia(int nAños){
+        int nDia = nAños * 365;
+        return nDia;
+    }
+    public static int calculaHora(int nDia){
+        int nHora = nDia * 12;
+        return nHora;
     }
 }
